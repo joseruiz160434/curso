@@ -5,7 +5,7 @@ import * as firebase from "firebase";
 import * as Permissions from "expo-permissions";
 import * as ImagePicker from "expo-image-picker";
 
-//TO DO HACER EL VIDEO 48-49 DE SUBIR EL AVATAR
+//TO DOlisto HACER EL VIDEO 48-49 DE SUBIR EL AVATAR
 
 //recibe props de UseLogged que es la info del usuario
 export default function InfoUser(props) {

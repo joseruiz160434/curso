@@ -8,6 +8,7 @@ import RestaurantsScreenStacks from "./RestaurantsStacks"; //aca importamos la v
 import TopListScreenStacks from "./TopListsStacks";
 import SearchScreenStacks from "./SearchStacks";
 import AccountScreenStacks from "./AccountStacks";
+import FavoritesScreenStacks from "./FavoritesStack";
 
 //crear nuestra nevegacion y creamos variable donde guardamos nuestros stack( rutas de navegacion)
 const NavigationStacks = createBottomTabNavigator(
@@ -29,6 +30,20 @@ const NavigationStacks = createBottomTabNavigator(
       })
     },
 
+    Favorites: {
+      screen: FavoritesScreenStacks,
+      navigationOptions: () => ({
+        tabBarLabel: "Favoritos",
+        tabBarIcon: ({ tintColor }) => (
+          <Icon
+            type="material-community"
+            name="heart-outline"
+            size={22}
+            color={tintColor}
+          />
+        )
+      })
+    },
     TopLists: {
       screen: TopListScreenStacks, // es la variable que le asigno el createStackNavigator
       navigationOptions: () => ({
@@ -76,7 +91,13 @@ const NavigationStacks = createBottomTabNavigator(
   },
   {
     initialRouteName: "Restaurants", //para que al iniciar la aplicacion se abra en  esa ruta ejemplo SearchCualquiera se toma es el que nombro arriba
-    order: ["Restaurants", "TopLists", "SearchCualquiera", "Account"], //para establecer el orden de los botones
+    order: [
+      "Restaurants",
+      "Favorites",
+      "TopLists",
+      "SearchCualquiera",
+      "Account"
+    ], //para establecer el orden de los botones
     tabBarOptions: {
       //cuando esta activo el boton de navegacion se coloca verde y los demas gris
       inactiveTintColor: "#646464",

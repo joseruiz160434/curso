@@ -74,7 +74,7 @@ export default function UserLogged() {
   );
 }
 
-//TO DO entender bien este stylo
+//TO DOparadespues entender bien este stylo
 const styles = StyleSheet.create({
   viewUserInfo: {
     minHeight: "100%", //se utiliza para definir la altura mínima de un elemento dado

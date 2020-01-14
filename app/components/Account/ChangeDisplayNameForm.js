@@ -1,4 +1,4 @@
-//TO DO NO SE PORQUE ACTULIZA PERO ME MUESTRA EL MENSJAE DE QUE NO SE PUDO
+//TO DOlisto NO SE PORQUE ACTULIZA PERO ME MUESTRA EL MENSJAE DE QUE NO SE PUDO
 import React, { useState } from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { Button, Input } from "react-native-elements";
@@ -36,7 +36,7 @@ export default function ChangeDisplayNameForm(props) {
         .then(() => {
           setIsLoading(false); //paramos el loading porque ya ha acabado de cargar
           setReloadData(true); //para actulizar la infor del usuario en pantalla
-          toasRef.current.show("Nombre Actulizado Correctamente.", 10000);
+          toasRef.current.show("Nombre Actulizado Correctamente.", 5000);
           setIsVisibleModal(false); //quitamos la ventana modal
         })
         .catch(() => {
@@ -44,6 +44,7 @@ export default function ChangeDisplayNameForm(props) {
             `Error al Actulizar el nombre de ${displayName} a ${newDisplayName}`
           );
           setIsLoading(false); //para que no cargue
+          setIsVisibleModal(false); //agregando esto solucione el error de que actulizaba pero mostraba error
         });
     }
   };
